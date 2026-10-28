@@ -2,12 +2,18 @@
   "name": "harbor-light-assessment",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=22" },
-  "workspaces": ["simulator", "app-skeleton/server"],
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "simulator",
+    "app-skeleton/server"
+  ],
   "scripts": {
     "sim": "npm run start -w simulator",
     "sim:test": "npm run test -w simulator",
     "skeleton:db": "docker compose -f app-skeleton/docker-compose.yml up -d",
-    "skeleton:server": "npm run dev -w app-skeleton/server"
+    "skeleton:server": "npm run dev -w app-skeleton/server",
+    "test": "npm run test -w app-skeleton/server"
   }
 }
