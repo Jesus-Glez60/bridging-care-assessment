@@ -1,0 +1,63 @@
+# One command: `docker compose up --build` → app on http://localhost:3000, simulator panel on http://localhost:4010/__sim/panel.
+# The app seeds itself on first start (empty database). "Reset demo data" in the header reseeds.
+name: harbor-light
+
+x-logging: &logging
+  driver: json-file
+  options: { max-size: "10m", max-file: "3" }
+
+services:
+  mongo:
+    image: mongo:7.0
+    # Single-node replica set: the app relies on multi-document transactions for capacity.
+    command: ["--replSet", "rs0", "--bind_ip_all"]
+    ulimits:
+      nofile: { soft: 64000, hard: 64000 }
+    healthcheck:
+      # Healthy only once this node is PRIMARY (initiates the replica set on first run).
+      test: >
+        mongosh --quiet --eval
+        "try { rs.status() } catch (e) { rs.initiate({ _id: 'rs0', members: [{ _id: 0, host: 'mongo:27017' }] }) }
+        quit(db.hello().isWritablePrimary ? 0 : 1)"
+      interval: 3s
+      timeout: 10s
+      retries: 40
+    volumes: [mongo-data:/data/db]
+    networks: [internal]
+    mem_limit: 512m
+    pids_limit: 300
+    logging: *logging
+
+  simulator:
+    build: .
+    command: ["npm", "run", "start", "-w", "simulator"]
+    environment:
+      TIDEWATER_WEBHOOK_URL: http://app:3000/webhooks/tidewater
+      TIDEWATER_SECRET: ${TIDEWATER_SECRET:-tidewater-dev}
+      TIDEWATER_QUIET: "1"
+    ports: ["${SIM_BIND:-127.0.0.1:4010}:4010"]
+    networks: [internal]
+    mem_limit: 128m
+    pids_limit: 100
+    logging: *logging
+
+  app:
+    build: .
+    environment:
+      MONGO_URL: mongodb://mongo:27017/harborlight?directConnection=true
+      TIDEWATER_BASE_URL: http://simulator:4010
+      TIDEWATER_SECRET: ${TIDEWATER_SECRET:-tidewater-dev}
+    depends_on:
+      mongo: { condition: service_healthy }
+      simulator: { condition: service_started }
+    ports: ["${APP_BIND:-127.0.0.1:3000}:3000"]
+    networks: [internal]
+    mem_limit: 384m
+    pids_limit: 100
+    logging: *logging
+
+networks:
+  internal: {}
+
+volumes:
+  mongo-data:

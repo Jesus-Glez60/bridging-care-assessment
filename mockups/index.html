@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Harbor Light · Mockups</title>
+  <style>
+    :root { --bg:#fafaf9; --card:#fff; --ink:#1c1917; --muted:#78716c; --line:#e7e5e4; --accent:#0f766e; --warn:#b45309; --mock:#fef3c7; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#0c0a09; --card:#1c1917; --ink:#f5f5f4; --muted:#a8a29e; --line:#292524; --accent:#2dd4bf; --warn:#fbbf24; --mock:#422006; } }
+    * { box-sizing: border-box; }
+    body { margin:0; font:15px/1.5 system-ui, -apple-system, Segoe UI, sans-serif; background:var(--bg); color:var(--ink); }
+    .banner { background:var(--mock); border-bottom:2px dashed var(--warn); padding:10px 16px; font-weight:600; text-align:center; }
+    .banner small { display:block; font-weight:400; color:var(--muted); }
+    main { max-width:960px; margin:0 auto; padding:24px 16px 64px; }
+    nav { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px; }
+    nav button { border:1px solid var(--line); background:var(--card); color:var(--ink); padding:6px 12px; border-radius:6px; cursor:pointer; }
+    nav button[aria-selected="true"] { background:var(--ink); color:var(--bg); }
+    section { display:none; } section.on { display:block; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px; margin-bottom:16px; }
+    h1 { font-size:22px; margin:0 0 4px; } h2 { font-size:16px; margin:0 0 8px; }
+    .muted { color:var(--muted); font-size:13px; }
+    label.row { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:8px 0; border-top:1px solid var(--line); }
+    input, select { font:inherit; color:inherit; background:transparent; border:1px solid var(--line); border-radius:6px; padding:4px 6px; }
+    .tag { display:inline-block; font-size:11px; padding:1px 6px; border-radius:4px; background:var(--mock); color:var(--warn); margin-left:6px; vertical-align:middle; }
+    .preview { border-left:3px solid var(--accent); padding:8px 12px; background:color-mix(in srgb, var(--accent) 8%, transparent); border-radius:4px; font-size:14px; }
+    table { width:100%; border-collapse:collapse; font-size:13px; }
+    th, td { text-align:left; padding:6px 8px; border-top:1px solid var(--line); }
+    th { color:var(--muted); font-weight:500; }
+    .bar { height:8px; border-radius:4px; background:var(--line); overflow:hidden; } .bar > i { display:block; height:100%; background:var(--accent); }
+    .btn { background:var(--accent); color:#fff; border:0; padding:6px 12px; border-radius:6px; cursor:pointer; }
+    .grid { display:grid; gap:12px; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); }
+    .stat b { display:block; font-size:24px; }
+  </style>
+</head>
+<body>
+  <div class="banner">MOCKUP: NOT BUILT. Nothing on this page is saved or wired to the app.
+    <small>Secondary screens I chose not to build, so the scope decisions are visible. The built prototype is at <a href="/">/</a>.</small>
+  </div>
+  <main>
+    <nav role="tablist">
+      <button role="tab" aria-selected="true" data-tab="prefs">Volunteer: notifications &amp; quiet hours</button>
+      <button role="tab" aria-selected="false" data-tab="waitlist">Coordinator: waitlist behavior</button>
+      <button role="tab" aria-selected="false" data-tab="attendance">Coordinator: season attendance</button>
+    </nav>
+
+    <section id="prefs" class="on">
+      <h1>Notification preferences</h1>
+      <p class="muted">What's built: in-app messages only, and a fixed 9 PM–8 AM quiet window (in the volunteer's own zone) that pauses waitlist offer holds. This screen makes that window per-volunteer and adds channels.</p>
+      <div class="card">
+        <h2>How should we reach you?</h2>
+        <label class="row">In-app messages <input type="checkbox" checked disabled> </label>
+        <label class="row">Email <span class="tag">mock</span><input type="checkbox" checked></label>
+        <label class="row">Text message (SMS) <span class="tag">mock</span><input type="checkbox"></label>
+      </div>
+      <div class="card">
+        <h2>Quiet hours</h2>
+        <p class="muted">No texts or emails during these hours. If a spot opens for you overnight, your hold doesn't start counting until quiet hours end.</p>
+        <label class="row">From <input type="time" id="qs" value="21:00"></label>
+        <label class="row">Until <input type="time" id="qe" value="08:00"></label>
+        <label class="row">Your time zone
+          <select id="tz"><option value="CT">Central (kitchen time)</option><option value="ET" selected>Eastern</option><option value="MT">Mountain</option><option value="PT">Pacific</option></select>
+        </label>
+        <p class="preview" id="qprev"></p>
+      </div>
+      <div class="card">
+        <h2>What do you want to hear about?</h2>
+        <label class="row">A shift I'm on moves or is cancelled <span class="muted">always on</span></label>
+        <label class="row">A waitlist spot is held for me <span class="muted">always on</span></label>
+        <label class="row">Reminder the day before <input type="checkbox" checked></label>
+        <label class="row">New shifts posted for teams I follow <input type="checkbox"></label>
+      </div>
+    </section>
+
+    <section id="waitlist">
+      <h1>Waitlist behavior</h1>
+      <p class="muted">Built: one fixed policy (offer to #1, 12 waking hours, paused overnight, never past 2 h before the shift). These are the knobs I'd expose next, with the two rules I deferred.</p>
+      <div class="card">
+        <h2>When a spot opens</h2>
+        <label class="row"><span><input type="radio" name="mode" checked> Hold it for the next person and ask them <span class="muted">(built)</span></span></label>
+        <label class="row"><span><input type="radio" name="mode"> Give it to the next person automatically <span class="tag">mock</span><br><span class="muted">Not recommended: they may not know they're on.</span></span></label>
+        <label class="row"><span><input type="radio" name="mode"> Tell everyone on the waitlist, first to accept wins <span class="tag">mock</span></span></label>
+      </div>
+      <div class="card">
+        <h2>Hold length</h2>
+        <label class="row">Hold for <span><input type="number" id="hold" value="12" min="1" max="48" style="width:64px"> waking hours</span></label>
+        <label class="row">Stop offering when the shift is less than <span><input type="number" id="cutoff" value="2" min="0" max="24" style="width:64px"> hours away</span></label>
+        <label class="row"><span>Inside that window, switch to "first to accept wins" <span class="tag">deferred</span></span><input type="checkbox"></label>
+        <label class="row"><span>Shorten the hold when the shift is within 24 h <span class="tag">deferred</span></span><input type="checkbox"></label>
+        <p class="preview" id="wprev"></p>
+      </div>
+      <div class="card">
+        <h2>Coordinator alerts</h2>
+        <label class="row">Tell me when someone removes a shift from their calendar and doesn't answer within <span><input type="number" value="24" style="width:64px"> h</span></label>
+        <label class="row">Daily digest of calendar sync failures <input type="checkbox" checked></label>
+      </div>
+    </section>
+
+    <section id="attendance">
+      <h1>Season attendance</h1>
+      <p class="muted">Needs check-in data the prototype doesn't collect. Numbers below are invented placeholders.</p>
+      <div class="grid">
+        <div class="card stat"><b>87%</b><span class="muted">confirmed who showed</span></div>
+        <div class="card stat"><b>11</b><span class="muted">no-shows this season</span></div>
+        <div class="card stat"><b>6</b><span class="muted">no-shows after deleting the calendar event</span></div>
+        <div class="card stat"><b>74%</b><span class="muted">waitlist offers accepted</span></div>
+      </div>
+      <div class="card">
+        <h2>By series</h2>
+        <table>
+          <thead><tr><th>Series</th><th>Avg fill</th><th></th><th>No-shows</th></tr></thead>
+          <tbody>
+            <tr><td>Tuesday Dinner Prep</td><td>91%</td><td style="width:40%"><div class="bar"><i style="width:91%"></i></div></td><td>4</td></tr>
+            <tr><td>Thursday Dinner Service</td><td>78%</td><td><div class="bar"><i style="width:78%"></i></div></td><td>3</td></tr>
+            <tr><td>Saturday Delivery Route</td><td>84%</td><td><div class="bar"><i style="width:84%"></i></div></td><td>4</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h2>Volunteers to check in with</h2>
+        <table>
+          <thead><tr><th>Volunteer</th><th>Pattern</th><th></th></tr></thead>
+          <tbody>
+            <tr><td>V-placeholder A</td><td>2 no-shows after removing the event from their calendar</td><td><button class="btn">Message</button></td></tr>
+            <tr><td>V-placeholder B</td><td>Declined 4 waitlist offers in a row</td><td><button class="btn">Message</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script>
+    document.querySelectorAll("nav button").forEach((b) => b.addEventListener("click", () => {
+      document.querySelectorAll("nav button").forEach((x) => x.setAttribute("aria-selected", String(x === b)));
+      document.querySelectorAll("section").forEach((s) => s.classList.toggle("on", s.id === b.dataset.tab));
+    }));
+    const fmt = (t) => { const [h, m] = t.split(":").map(Number); return `${((h + 11) % 12) + 1}:${String(m).padStart(2, "0")} ${h < 12 ? "AM" : "PM"}`; };
+    const q = () => {
+      const s = document.getElementById("qs").value, e = document.getElementById("qe").value, tz = document.getElementById("tz").value;
+      document.getElementById("qprev").textContent = `Preview: a spot opens for you at 11:30 PM ${tz}. You'll hear about it at ${fmt(e)} ${tz}, and the hold starts then (not at ${fmt(s)}).`;
+    };
+    const w = () => {
+      const h = +document.getElementById("hold").value, c = +document.getElementById("cutoff").value;
+      document.getElementById("wprev").textContent = `Preview: a spot opens Wed 9:00 AM for a Thu 4:00 PM shift. The hold would run until ${h <= 12 ? `Wed ${fmt(String(9 + h).padStart(2, "0") + ":00")}` : "Thu morning"}, capped at Thu ${fmt(String(16 - c).padStart(2, "0") + ":00")} (${c} h before the shift).`;
+    };
+    ["qs", "qe", "tz"].forEach((id) => document.getElementById(id).addEventListener("input", q));
+    ["hold", "cutoff"].forEach((id) => document.getElementById(id).addEventListener("input", w));
+    q(); w();
+  </script>
+</body>
+</html>
