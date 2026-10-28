@@ -4,3 +4,7 @@ dist/
 out-tsc/
 *.log
 .env
+.env.*
+!.env.example
+compose.prod.yaml
+deploy/local/

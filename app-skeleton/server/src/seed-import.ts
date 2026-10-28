@@ -1,16 +1,17 @@
-// Starter skeleton — replace freely.
-// Copies seed/data.json into MongoDB as-is. No cleaning, no derived data, no occurrence generation.
+// Stage 1 of the import: copy seed/data.json into raw_* collections exactly as-is (the "spreadsheet").
+// Stage 2 (import/normalize.ts) reads these, cleans them, and writes the domain collections plus a report,
+// so the import report can always point back at the untouched source rows.
 import { readFileSync } from "node:fs";
 import type { mongo } from "mongoose";
 
 export async function importSeed(db: mongo.Db, seedPath: string) {
   const data = JSON.parse(readFileSync(seedPath, "utf8"));
   const collections: Record<string, unknown[]> = {
-    org: [data.org],
-    series: data.series,
-    exceptions: data.exceptions,
-    volunteers: data.volunteers,
-    signups_import: data.signups,
+    raw_org: [data.org],
+    raw_series: data.series,
+    raw_exceptions: data.exceptions,
+    raw_volunteers: data.volunteers,
+    raw_signups: data.signups,
   };
   const counts: Record<string, number> = {};
   for (const [name, docs] of Object.entries(collections)) {
