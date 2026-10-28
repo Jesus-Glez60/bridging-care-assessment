@@ -2,6 +2,9 @@
 # The app seeds itself on first start (empty database). "Reset demo data" in the header reseeds.
 name: harbor-light
 
+x-labels: &labels
+  com.centurylinklabs.watchtower.enable: "false" # never auto-update the demo underneath reviewers
+
 x-logging: &logging
   driver: json-file
   options: { max-size: "10m", max-file: "3" }
@@ -27,6 +30,7 @@ services:
     mem_limit: 512m
     pids_limit: 300
     logging: *logging
+    labels: *labels
 
   simulator:
     build: .
@@ -40,6 +44,7 @@ services:
     mem_limit: 128m
     pids_limit: 100
     logging: *logging
+    labels: *labels
 
   app:
     build: .
@@ -55,6 +60,7 @@ services:
     mem_limit: 384m
     pids_limit: 100
     logging: *logging
+    labels: *labels
 
 networks:
   internal: {}
