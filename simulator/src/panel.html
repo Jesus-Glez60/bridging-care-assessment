@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tidewater simulator</title>
+<style>
+  :root { color-scheme: light dark; --bg: #fafafa; --fg: #1b1f24; --muted: #66707a; --line: #d8dde2; --accent: #1f5f8b; --bad: #a23b2a; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #15191d; --fg: #e6e9ec; --muted: #98a2ad; --line: #2c333a; --accent: #6fb3e0; --bad: #e0806f; } }
+  body { margin: 0; padding: 24px; font: 14px/1.45 system-ui, sans-serif; background: var(--bg); color: var(--fg); }
+  h1 { font-size: 18px; margin: 0 0 4px; } h2 { font-size: 15px; margin: 28px 0 8px; }
+  p.note { color: var(--muted); margin: 0 0 16px; }
+  table { border-collapse: collapse; width: 100%; } th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-weight: 600; color: var(--muted); } code, td.mono { font-family: ui-monospace, monospace; font-size: 12px; }
+  button { font: inherit; padding: 3px 10px; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--accent); cursor: pointer; }
+  button.danger { color: var(--bad); } textarea { width: 100%; min-height: 220px; font: 12px ui-monospace, monospace; background: transparent; color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 8px; box-sizing: border-box; }
+  .row { display: flex; gap: 8px; align-items: center; margin: 8px 0; } #msg { color: var(--muted); }
+  .wrap { overflow-x: auto; }
+</style>
+</head>
+<body>
+<h1>Tidewater Calendar simulator</h1>
+<p class="note">Fictional provider for the Harbor Light assessment. Admin actions here are never throttled or failure-injected.</p>
+<div class="row"><button onclick="refresh()">Refresh</button><button class="danger" onclick="resetSim()">Reset to preload</button><span id="msg"></span></div>
+
+<h2>Config</h2>
+<textarea id="config"></textarea>
+<div class="row"><button onclick="saveConfig()">Save config</button></div>
+
+<h2>Events</h2>
+<div class="wrap"><table id="events"><thead><tr><th>Account</th><th>Event</th><th>Title</th><th>Start</th><th>End</th><th>v</th><th>app_ref</th><th></th></tr></thead><tbody></tbody></table></div>
+
+<h2>Recent deliveries</h2>
+<div class="wrap"><table id="deliveries"><thead><tr><th>Delivery</th><th>Type</th><th>Event</th><th>v</th><th>Attempts</th><th></th></tr></thead><tbody></tbody></table></div>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const say = (t) => { $("#msg").textContent = t; };
+async function call(method, path, body) {
+  const res = await fetch(path, { method, headers: { "content-type": "application/json" }, body: body ? JSON.stringify(body) : undefined });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(data.message || data.error || res.status);
+  return data;
+}
+async function refresh() {
+  const [cfg, state, del] = await Promise.all([call("GET", "/__sim/config"), call("GET", "/__sim/state"), call("GET", "/__sim/deliveries?limit=50")]);
+  if (document.activeElement !== $("#config")) $("#config").value = JSON.stringify(cfg, null, 2);
+  const rows = [];
+  for (const [acct, events] of Object.entries(state.accounts).sort()) for (const e of events) rows.push(
+    `<tr><td class="mono">${esc(acct)}</td><td class="mono">${esc(e.id)}</td><td>${esc(e.title)}</td><td class="mono">${esc(e.start)}</td><td class="mono">${esc(e.end)}</td><td>${e.version}</td><td class="mono">${esc(e.app_ref)}</td>` +
+    `<td><button onclick="userEdit('${esc(acct)}','${esc(e.id)}','${esc(e.start)}','${esc(e.end)}')">user-edit</button> <button class="danger" onclick="userDelete('${esc(acct)}','${esc(e.id)}')">user-delete</button></td></tr>`);
+  $("#events tbody").innerHTML = rows.join("") || `<tr><td colspan="8">No events.</td></tr>`;
+  $("#deliveries tbody").innerHTML = del.deliveries.map((d) =>
+    `<tr><td class="mono">${esc(d.delivery_id)}</td><td>${esc(d.type)}</td><td class="mono">${esc(d.event_id)}</td><td>${d.version}</td>` +
+    `<td class="mono">${d.attempts.map((a) => esc(a.kind + ":" + a.status)).join("<br>") || "pending"}</td><td><button onclick="replay('${esc(d.delivery_id)}')">replay</button></td></tr>`).join("") || `<tr><td colspan="6">No deliveries yet.</td></tr>`;
+}
+async function saveConfig() { try { await call("POST", "/__sim/config", JSON.parse($("#config").value)); say("Config saved."); refresh(); } catch (e) { say("Config not saved: " + e.message); } }
+async function resetSim() { if (!confirm("Reset all events to the preload and clear the delivery log?")) return; await call("POST", "/__sim/reset"); say("Reset."); refresh(); }
+async function userDelete(acct, id) { await call("POST", `/__sim/accounts/${acct}/events/${id}/user-delete`); say(`Volunteer deleted ${id} on their device.`); setTimeout(refresh, 300); }
+async function userEdit(acct, id, start, end) {
+  const s = prompt("New start (ISO-8601 with offset). Leave as-is to edit only the title.", start); if (s === null) return;
+  const e = prompt("New end", end); if (e === null) return;
+  const t = prompt("New title (blank = unchanged)", "");
+  try { await call("POST", `/__sim/accounts/${acct}/events/${id}/user-edit`, { start: s, end: e, ...(t ? { title: t } : {}) }); say(`Volunteer edited ${id} on their device.`); setTimeout(refresh, 300); } catch (err) { say("Edit rejected: " + err.message); }
+}
+async function replay(id) { const r = await call("POST", `/__sim/replay/${id}`); say(`Replayed ${id} -> ${r.attempt.status}`); refresh(); }
+refresh(); setInterval(refresh, 4000);
+</script>
+</body>
+</html>

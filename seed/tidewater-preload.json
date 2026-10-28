@@ -1,0 +1,59 @@
+{
+  "note": "Events already on volunteers' Tidewater calendars when the simulator starts.",
+  "events": [
+    {
+      "id": "evt_01M4698BC0VJZC8WJ37S1Z9ZBE",
+      "accountId": "tw_v04",
+      "title": "Harbor Light: Tuesday Dinner Prep",
+      "start": "2026-10-27T16:00:00-05:00",
+      "end": "2026-10-27T18:00:00-05:00",
+      "app_ref": "hl:signup:su_0101",
+      "version": 1
+    },
+    {
+      "id": "evt_01M469A5Z0JFBYVXW4V5SPP0FJ",
+      "accountId": "tw_v04",
+      "title": "Harbor Light: Saturday Delivery Route",
+      "start": "2026-10-24T09:00:00-05:00",
+      "end": "2026-10-24T12:00:00-05:00",
+      "app_ref": "hl:signup:su_0016",
+      "version": 1
+    },
+    {
+      "id": "evt_01M469C0J0VTER32M849VABRBN",
+      "accountId": "tw_v04",
+      "title": "Harbor Light: Tuesday Dinner Prep",
+      "start": "2026-12-02T16:00:00-06:00",
+      "end": "2026-12-02T18:00:00-06:00",
+      "app_ref": "hl:signup:su_0088",
+      "version": 2
+    },
+    {
+      "id": "evt_01M469DV508X60QX497BQSR1N5",
+      "accountId": "tw_v04",
+      "title": "Harbor Light: Saturday Delivery Route",
+      "start": "2026-12-19T09:00:00-06:00",
+      "end": "2026-12-19T12:00:00-06:00",
+      "app_ref": "hl:signup:su_0009",
+      "version": 1
+    },
+    {
+      "id": "evt_01M469FNR002ZF857R9F1X7WFA",
+      "accountId": "tw_v12",
+      "title": "Harbor Light: Tuesday Dinner Prep (bring apron)",
+      "start": "2026-12-01T16:00:00-06:00",
+      "end": "2026-12-01T18:00:00-06:00",
+      "app_ref": "hl:signup:su_0141",
+      "version": 3
+    },
+    {
+      "id": "evt_01M469HGB0T75PQSNX4QBCCSSY",
+      "accountId": "tw_v02",
+      "title": "Harbor Light: Tuesday Dinner Prep",
+      "start": "2026-11-17T16:00:00-06:00",
+      "end": "2026-11-17T18:00:00-06:00",
+      "app_ref": "legacy-import-0417",
+      "version": 1
+    }
+  ]
+}

@@ -1,0 +1,2406 @@
+{
+  "org": {
+    "id": "org_harbor_light",
+    "name": "Harbor Light Community Kitchen",
+    "city": "Grand Harbor",
+    "tz": "America/Chicago",
+    "simulatedNow": "2026-10-21T09:00:00-05:00",
+    "coordinators": [
+      {
+        "id": "C01",
+        "name": "Rosa Delgado",
+        "email": "rosa.delgado@harborlight.example.org"
+      },
+      {
+        "id": "C02",
+        "name": "Malik Brennan",
+        "email": "malik.brennan@harborlight.example.org"
+      }
+    ]
+  },
+  "series": [
+    {
+      "id": "A",
+      "title": "Tuesday Dinner Prep",
+      "recurrence": "weekly",
+      "weekday": "TU",
+      "localStart": "16:00",
+      "localEnd": "18:00",
+      "rangeStart": "2026-10-20",
+      "rangeEnd": "2026-12-29",
+      "capacity": 8,
+      "tz": "America/Chicago"
+    },
+    {
+      "id": "B",
+      "title": "Saturday Delivery Route",
+      "recurrence": "weekly",
+      "weekday": "SA",
+      "localStart": "09:00",
+      "localEnd": "12:00",
+      "rangeStart": "2026-10-24",
+      "rangeEnd": "2026-12-19",
+      "capacity": 4,
+      "tz": "America/Chicago"
+    },
+    {
+      "id": "C",
+      "title": "Thursday Dinner Service",
+      "recurrence": "weekly",
+      "weekday": "TH",
+      "localStart": "17:30",
+      "localEnd": "19:30",
+      "rangeStart": "2026-10-22",
+      "rangeEnd": "2026-12-17",
+      "capacity": 6,
+      "tz": "America/Chicago"
+    },
+    {
+      "id": "D",
+      "title": "Holiday Meal Boxes",
+      "recurrence": "once",
+      "weekday": "SA",
+      "localStart": "08:00",
+      "localEnd": "14:00",
+      "rangeStart": "2026-12-19",
+      "rangeEnd": "2026-12-19",
+      "capacity": 15,
+      "tz": "America/Chicago"
+    },
+    {
+      "id": "E",
+      "title": "Pantry Restock (imported)",
+      "recurrence": "once",
+      "start": "2026-11-14 10:00",
+      "capacity": 6
+    }
+  ],
+  "exceptions": [
+    {
+      "seriesId": "A",
+      "originalDate": "2026-11-24",
+      "kind": "cancelled",
+      "note": "Thanksgiving week"
+    },
+    {
+      "seriesId": "C",
+      "originalDate": "2026-11-26",
+      "kind": "cancelled",
+      "note": "Thanksgiving week"
+    },
+    {
+      "seriesId": "B",
+      "originalDate": "2026-11-28",
+      "kind": "cancelled",
+      "note": "Thanksgiving week"
+    },
+    {
+      "seriesId": "A",
+      "originalDate": "2026-12-01",
+      "kind": "moved",
+      "movedToDate": "2026-12-02",
+      "movedToLocalStart": "16:00",
+      "note": "Kitchen inspection Tuesday"
+    }
+  ],
+  "volunteers": [
+    {
+      "id": "V01",
+      "name": "Marisol Vega",
+      "email": "marisol.vega@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v01"
+    },
+    {
+      "id": "V02",
+      "name": "Dev Ramaswamy",
+      "email": "dev.ramaswamy@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v02"
+    },
+    {
+      "id": "V03",
+      "name": "Tomas Okonkwo",
+      "email": "tomas.okonkwo@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V04",
+      "name": "Lena Fairweather",
+      "email": "lena.fairweather@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v04"
+    },
+    {
+      "id": "V05",
+      "name": "Hugo Castellanos",
+      "email": "hugo.castellanos@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v05"
+    },
+    {
+      "id": "V06",
+      "name": "Priya Nandakumar",
+      "email": "priya.nandakumar@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V07",
+      "name": "Jerome Whitfield",
+      "email": "jerome.whitfield@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v07"
+    },
+    {
+      "id": "V08",
+      "name": "Anika Sørensen",
+      "email": "anika.sorensen@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v08"
+    },
+    {
+      "id": "V09",
+      "name": "Sam Delacroix",
+      "email": "sam.delacroix@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V10",
+      "name": "Ines Barbosa",
+      "email": "ines.barbosa@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V11",
+      "name": "Kwame Asante",
+      "email": "kwame.asante@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v11"
+    },
+    {
+      "id": "V12",
+      "name": "Noor Haddad",
+      "email": "noor.haddad@example.org",
+      "tz": "America/Phoenix",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v12"
+    },
+    {
+      "id": "V13",
+      "name": "Blessing Dunmore",
+      "email": "blessing.dunmore@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V14",
+      "name": "Wren Moreau",
+      "email": "wren.moreau@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v14"
+    },
+    {
+      "id": "V15",
+      "name": "Blessing Valdivia",
+      "email": "blessing.valdivia@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V16",
+      "name": "Kofi Valdivia",
+      "email": "kofi.valdivia@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V17",
+      "name": "Paloma Moreau",
+      "email": "paloma.moreau@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v17"
+    },
+    {
+      "id": "V18",
+      "name": "Ike Hargrove",
+      "email": "ike.hargrove@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v18"
+    },
+    {
+      "id": "V19",
+      "name": "Helena Lattimore",
+      "email": "helena.lattimore@example.org",
+      "tz": "CST",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v19"
+    },
+    {
+      "id": "V20",
+      "name": "Farah Westbrook",
+      "email": "farah.westbrook@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V21",
+      "name": "Ike Eklund",
+      "email": "ike.eklund@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v21"
+    },
+    {
+      "id": "V22",
+      "name": "Nico Hargrove",
+      "email": "nico.hargrove@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V23",
+      "name": "Zara Bellweather",
+      "email": "zara.bellweather@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v23"
+    },
+    {
+      "id": "V24",
+      "name": "Ximena Petrakis",
+      "email": "ximena.petrakis@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v24"
+    },
+    {
+      "id": "V25",
+      "name": "Delphine Nakamura",
+      "email": "delphine.nakamura@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v25"
+    },
+    {
+      "id": "V26",
+      "name": "Rafael Corliss",
+      "email": "rafael.corliss@example.org",
+      "tz": "America/Phoenix",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V27",
+      "name": "Oren Lattimore",
+      "email": "oren.lattimore@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v27"
+    },
+    {
+      "id": "V28",
+      "name": "Amos Oyelaran",
+      "email": "amos.oyelaran@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v28"
+    },
+    {
+      "id": "V29",
+      "name": "Ike Kestrel",
+      "email": "ike.kestrel@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v29"
+    },
+    {
+      "id": "V30",
+      "name": "Dalia Esposito",
+      "email": "dalia.esposito@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V31",
+      "name": "Hana Esposito",
+      "email": "hana.esposito@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v31"
+    },
+    {
+      "id": "V32",
+      "name": "Elias Yilmaz",
+      "email": "elias.yilmaz@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V33",
+      "name": "Fiona Underwood",
+      "email": "fiona.underwood@example.org",
+      "tz": null,
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V34",
+      "name": "Ximena Hargrove",
+      "email": "ximena.hargrove@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V35",
+      "name": "Delphine Fontaine",
+      "email": "delphine.fontaine@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v35"
+    },
+    {
+      "id": "V36",
+      "name": "Wes Jessup",
+      "email": "wes.jessup@example.org",
+      "tz": "America/Indiana/Indianapolis",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v36"
+    },
+    {
+      "id": "V37",
+      "name": "Rhea Galloway",
+      "email": "rhea.galloway@example.org",
+      "tz": "America/Indiana/Indianapolis",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V38",
+      "name": "Blessing Okafor",
+      "email": "blessing.okafor@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V39",
+      "name": "Yusuf Pell",
+      "email": "yusuf.pell@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v39"
+    },
+    {
+      "id": "V40",
+      "name": "Uma Kowalczyk",
+      "email": "uma.kowalczyk@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v40"
+    },
+    {
+      "id": "V41",
+      "name": "Vera Underwood",
+      "email": "vera.underwood@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v41"
+    },
+    {
+      "id": "V42",
+      "name": "Vera Lindqvist",
+      "email": "vera.lindqvist@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v42"
+    },
+    {
+      "id": "V43",
+      "name": "Soren Umber",
+      "email": "soren.umber@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v43"
+    },
+    {
+      "id": "V44",
+      "name": "Cyrus Lindqvist",
+      "email": "cyrus.lindqvist@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v44"
+    },
+    {
+      "id": "V45",
+      "name": "Ulises Fontaine",
+      "email": "ulises.fontaine@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v45"
+    },
+    {
+      "id": "V46",
+      "name": "Kofi Ravensworth",
+      "email": "kofi.ravensworth@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v46"
+    },
+    {
+      "id": "V47",
+      "name": "Mira Sato",
+      "email": "mira.sato@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V48",
+      "name": "Zara Nwosu",
+      "email": "zara.nwosu@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v48"
+    },
+    {
+      "id": "V49",
+      "name": "Mira Dunmore",
+      "email": "mira.dunmore@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v49"
+    },
+    {
+      "id": "V50",
+      "name": "Lucia Zamora",
+      "email": "lucia.zamora@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V51",
+      "name": "Teodor Quintero",
+      "email": "teodor.quintero@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V52",
+      "name": "Fiona Sato",
+      "email": "fiona.sato@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V53",
+      "name": "Jun Iwu",
+      "email": "jun.iwu@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V54",
+      "name": "Cyrus Delahaye",
+      "email": "cyrus.delahaye@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v54"
+    },
+    {
+      "id": "V55",
+      "name": "Jada Ravensworth",
+      "email": "jada.ravensworth@example.org",
+      "tz": "America/Los_Angeles",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v55"
+    },
+    {
+      "id": "V56",
+      "name": "Quinn Oyelaran",
+      "email": "quinn.oyelaran@example.org",
+      "tz": "America/Indiana/Indianapolis",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v56"
+    },
+    {
+      "id": "V57",
+      "name": "Victor Petrakis",
+      "email": "victor.petrakis@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V58",
+      "name": "Victor Jaramillo",
+      "email": "victor.jaramillo@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v58"
+    },
+    {
+      "id": "V59",
+      "name": "Fiona Marchetti",
+      "email": "fiona.marchetti@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V60",
+      "name": "Mateo Bellweather",
+      "email": "mateo.bellweather@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v60"
+    },
+    {
+      "id": "V61",
+      "name": "Oren Ravensworth",
+      "email": "oren.ravensworth@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v61"
+    },
+    {
+      "id": "V62",
+      "name": "Wes Moreau",
+      "email": "wes.moreau@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v62"
+    },
+    {
+      "id": "V63",
+      "name": "Delphine Iwu",
+      "email": "delphine.iwu@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V64",
+      "name": "Paloma Yoon",
+      "email": "paloma.yoon@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V65",
+      "name": "Ezra Szabo",
+      "email": "ezra.szabo@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v65"
+    },
+    {
+      "id": "V66",
+      "name": "Vera Tran",
+      "email": "vera.tran@example.org",
+      "tz": "America/Denver",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v66"
+    },
+    {
+      "id": "V67",
+      "name": "Bea Dunmore",
+      "email": "bea.dunmore@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v67"
+    },
+    {
+      "id": "V68",
+      "name": "Jada Iwu",
+      "email": "jada.iwu@example.org",
+      "tz": "America/Denver",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V69",
+      "name": "Isaac Delahaye",
+      "email": "isaac.delahaye@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v69"
+    },
+    {
+      "id": "V70",
+      "name": "Delphine Galloway",
+      "email": "delphine.galloway@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v70"
+    },
+    {
+      "id": "V71",
+      "name": "Adaeze Okafor",
+      "email": "adaeze.okafor@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v71"
+    },
+    {
+      "id": "V72",
+      "name": "Kofi Pell",
+      "email": "kofi.pell@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v72"
+    },
+    {
+      "id": "V73",
+      "name": "Dalia Eklund",
+      "email": "dalia.eklund@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v73"
+    },
+    {
+      "id": "V74",
+      "name": "Jada Pell",
+      "email": "jada.pell@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V75",
+      "name": "Keziah Okafor",
+      "email": "keziah.okafor@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v75"
+    },
+    {
+      "id": "V76",
+      "name": "Oren Okafor",
+      "email": "oren.okafor@example.org",
+      "tz": "America/Los_Angeles",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V77",
+      "name": "Zara Ilunga",
+      "email": "zara.ilunga@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V78",
+      "name": "Ike Abara",
+      "email": "ike.abara@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v78"
+    },
+    {
+      "id": "V79",
+      "name": "Uma Jessup",
+      "email": "uma.jessup@example.org",
+      "tz": "America/Denver",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V80",
+      "name": "Zara Whitlock",
+      "email": "zara.whitlock@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v80"
+    },
+    {
+      "id": "V81",
+      "name": "Kofi Sato",
+      "email": "kofi.sato@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v81"
+    },
+    {
+      "id": "V82",
+      "name": "Gustavo Garroway",
+      "email": "gustavo.garroway@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v82"
+    },
+    {
+      "id": "V83",
+      "name": "Quinn Thibodeaux",
+      "email": "quinn.thibodeaux@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V84",
+      "name": "Adaeze Iwu",
+      "email": "adaeze.iwu@example.org",
+      "tz": "America/Indiana/Indianapolis",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V85",
+      "name": "Gideon Galloway",
+      "email": "gideon.galloway@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v85"
+    },
+    {
+      "id": "V86",
+      "name": "Zara Vasquez",
+      "email": "zara.vasquez@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v86"
+    },
+    {
+      "id": "V87",
+      "name": "Simone Okafor",
+      "email": "simone.okafor@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V88",
+      "name": "J. Whitfield",
+      "email": "Jerome.Whitfield@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V89",
+      "name": "Calvin Lindqvist",
+      "email": "calvin.lindqvist@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v89"
+    },
+    {
+      "id": "V90",
+      "name": "Ximena Iwu",
+      "email": "ximena.iwu@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v90"
+    },
+    {
+      "id": "V91",
+      "name": "Ike Esposito",
+      "email": "ike.esposito@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v91"
+    },
+    {
+      "id": "V92",
+      "name": "Odette Nakamura",
+      "email": "odette.nakamura@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V93",
+      "name": "Uma Oyelaran",
+      "email": "uma.oyelaran@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V94",
+      "name": "Nadia Ashdown",
+      "email": "nadia.ashdown@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v94"
+    },
+    {
+      "id": "V95",
+      "name": "Adaeze Szabo",
+      "email": "adaeze.szabo@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V96",
+      "name": "Jada Kowalczyk",
+      "email": "jada.kowalczyk@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v96"
+    },
+    {
+      "id": "V97",
+      "name": "Yusuf Thibodeaux",
+      "email": "yusuf.thibodeaux@example.org",
+      "tz": "America/Phoenix",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V98",
+      "name": "Gideon Marchetti",
+      "email": "gideon.marchetti@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V99",
+      "name": "Nico Dunmore",
+      "email": "nico.dunmore@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V100",
+      "name": "Elias Rasmussen",
+      "email": "elias.rasmussen@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V101",
+      "name": "Mateo Esposito",
+      "email": "mateo.esposito@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v101"
+    },
+    {
+      "id": "V102",
+      "name": "Gideon Jessup",
+      "email": "gideon.jessup@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v102"
+    },
+    {
+      "id": "V103",
+      "name": "Kofi Okafor",
+      "email": "kofi.okafor@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v103"
+    },
+    {
+      "id": "V104",
+      "name": "Pavel Tran",
+      "email": "pavel.tran@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V105",
+      "name": "Vera Kowalczyk",
+      "email": "vera.kowalczyk@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V106",
+      "name": "Elias Jessup",
+      "email": "elias.jessup@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v106"
+    },
+    {
+      "id": "V107",
+      "name": "Nadia Westbrook",
+      "email": "nadia.westbrook@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V108",
+      "name": "Ulises Corliss",
+      "email": "ulises.corliss@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V109",
+      "name": "Blessing Kestrel",
+      "email": "blessing.kestrel@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V110",
+      "name": "Rafael Kowalczyk",
+      "email": "rafael.kowalczyk@example.org",
+      "tz": "America/Los_Angeles",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v110"
+    },
+    {
+      "id": "V111",
+      "name": "Calvin Brightwater",
+      "email": "calvin.brightwater@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v111"
+    },
+    {
+      "id": "V112",
+      "name": "Kofi Moreau",
+      "email": "kofi.moreau@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v112"
+    },
+    {
+      "id": "V113",
+      "name": "Helena Lindqvist",
+      "email": "helena.lindqvist@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v113"
+    },
+    {
+      "id": "V114",
+      "name": "Cyrus Vasquez",
+      "email": "cyrus.vasquez@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v114"
+    },
+    {
+      "id": "V115",
+      "name": "Gideon Kestrel",
+      "email": "gideon.kestrel@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V116",
+      "name": "Rhea Ashdown",
+      "email": "rhea.ashdown@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V117",
+      "name": "Isaac Brightwater",
+      "email": "isaac.brightwater@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v117"
+    },
+    {
+      "id": "V118",
+      "name": "Uma Lattimore",
+      "email": "uma.lattimore@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v118"
+    },
+    {
+      "id": "V119",
+      "name": "Victor Lindqvist",
+      "email": "victor.lindqvist@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v119"
+    },
+    {
+      "id": "V120",
+      "name": "Wren Sato",
+      "email": "wren.sato@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v120"
+    },
+    {
+      "id": "V121",
+      "name": "Vera Ashdown",
+      "email": "vera.ashdown@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v121"
+    },
+    {
+      "id": "V122",
+      "name": "Gustavo Valdivia",
+      "email": "gustavo.valdivia@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v122"
+    },
+    {
+      "id": "V123",
+      "name": "Amos Valdivia",
+      "email": "amos.valdivia@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v123"
+    },
+    {
+      "id": "V124",
+      "name": "Yusuf Okafor",
+      "email": "yusuf.okafor@example.org",
+      "tz": "America/New_York",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v124"
+    },
+    {
+      "id": "V125",
+      "name": "Farah Tran",
+      "email": "farah.tran@example.org",
+      "tz": "America/Los_Angeles",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v125"
+    },
+    {
+      "id": "V126",
+      "name": "Blessing Esposito",
+      "email": "blessing.esposito@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v126"
+    },
+    {
+      "id": "V127",
+      "name": "Jada Ashdown",
+      "email": "jada.ashdown@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V128",
+      "name": "Gustavo Sato",
+      "email": "gustavo.sato@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v128"
+    },
+    {
+      "id": "V129",
+      "name": "Gideon Nakamura",
+      "email": "gideon.nakamura@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V130",
+      "name": "Vera Zamora",
+      "email": "vera.zamora@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V131",
+      "name": "Ulises Iwu",
+      "email": "ulises.iwu@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V132",
+      "name": "Keziah Hollis",
+      "email": "keziah.hollis@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v132"
+    },
+    {
+      "id": "V133",
+      "name": "Paloma Fontaine",
+      "email": "paloma.fontaine@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v133"
+    },
+    {
+      "id": "V134",
+      "name": "Fiona Esposito",
+      "email": "fiona.esposito@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v134"
+    },
+    {
+      "id": "V135",
+      "name": "Dalia Cardenas",
+      "email": "dalia.cardenas@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V136",
+      "name": "Gustavo Brightwater",
+      "email": "gustavo.brightwater@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v136"
+    },
+    {
+      "id": "V137",
+      "name": "Gideon Lindqvist",
+      "email": "gideon.lindqvist@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V138",
+      "name": "Nadia Ravensworth",
+      "email": "nadia.ravensworth@example.org",
+      "tz": "America/Denver",
+      "calendarConnected": true,
+      "tidewaterAccountId": "tw_v138"
+    },
+    {
+      "id": "V139",
+      "name": "Uma Iwu",
+      "email": "uma.iwu@example.org",
+      "tz": "America/Chicago",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    },
+    {
+      "id": "V140",
+      "name": "Wes Hollis",
+      "email": "wes.hollis@example.org",
+      "tz": "America/Phoenix",
+      "calendarConnected": false,
+      "tidewaterAccountId": null
+    }
+  ],
+  "signups": [
+    {
+      "id": "su_0001",
+      "seriesId": "C",
+      "originalDate": "2026-10-29",
+      "volunteerId": "V15",
+      "status": "confirmed",
+      "createdAt": "2026-09-14T14:42:56.000Z"
+    },
+    {
+      "id": "su_0002",
+      "seriesId": "A",
+      "originalDate": "2026-12-08",
+      "volunteerId": "V117",
+      "status": "confirmed",
+      "createdAt": "2026-09-14T16:38:32.000Z"
+    },
+    {
+      "id": "su_0003",
+      "seriesId": "A",
+      "originalDate": "2026-12-08",
+      "volunteerId": "V56",
+      "status": "confirmed",
+      "createdAt": "2026-09-14T18:23:25.000Z"
+    },
+    {
+      "id": "su_0004",
+      "seriesId": "A",
+      "originalDate": "2026-11-10",
+      "volunteerId": "V55",
+      "status": "confirmed",
+      "createdAt": "2026-09-14T22:14:15.000Z"
+    },
+    {
+      "id": "su_0005",
+      "seriesId": "B",
+      "originalDate": "2026-10-31",
+      "volunteerId": "V87",
+      "status": "confirmed",
+      "createdAt": "2026-09-14T22:50:02.000Z"
+    },
+    {
+      "id": "su_0006",
+      "seriesId": "A",
+      "originalDate": "2026-11-10",
+      "volunteerId": "V21",
+      "status": "confirmed",
+      "createdAt": "2026-09-15T02:19:25.000Z"
+    },
+    {
+      "id": "su_0007",
+      "seriesId": "C",
+      "originalDate": "2026-10-29",
+      "volunteerId": "V80",
+      "status": "confirmed",
+      "createdAt": "2026-09-15T05:16:55.000Z"
+    },
+    {
+      "id": "su_0008",
+      "seriesId": "A",
+      "originalDate": "2026-10-20",
+      "volunteerId": "V68",
+      "status": "confirmed",
+      "createdAt": "2026-09-15T20:14:44.000Z"
+    },
+    {
+      "id": "su_0009",
+      "seriesId": "B",
+      "originalDate": "2026-12-19",
+      "volunteerId": "V04",
+      "status": "confirmed",
+      "createdAt": "2026-09-16T02:20:31.000Z"
+    },
+    {
+      "id": "su_0010",
+      "seriesId": "A",
+      "originalDate": "2026-11-03",
+      "volunteerId": "V33",
+      "status": "confirmed",
+      "createdAt": "2026-09-16T06:38:27.000Z"
+    },
+    {
+      "id": "su_0011",
+      "seriesId": "A",
+      "originalDate": "2026-11-03",
+      "volunteerId": "V39",
+      "status": "confirmed",
+      "createdAt": "2026-09-16T11:00:47.000Z"
+    },
+    {
+      "id": "su_0012",
+      "seriesId": "A",
+      "originalDate": "2026-12-08",
+      "volunteerId": "V27",
+      "status": "confirmed",
+      "createdAt": "2026-09-16T12:36:08.000Z"
+    },
+    {
+      "id": "su_0013",
+      "seriesId": "A",
+      "originalDate": "2026-12-22",
+      "volunteerId": "V64",
+      "status": "confirmed",
+      "createdAt": "2026-09-16T17:04:13.000Z"
+    },
+    {
+      "id": "su_0014",
+      "seriesId": "A",
+      "originalDate": "2026-10-27",
+      "volunteerId": "V01",
+      "status": "confirmed",
+      "createdAt": "2026-09-16T17:09:12.000Z"
+    },
+    {
+      "id": "su_0015",
+      "seriesId": "C",
+      "originalDate": "2026-12-17",
+      "volunteerId": "V93",
+      "status": "confirmed",
+      "createdAt": "2026-09-16T22:46:23.000Z"
+    },
+    {
+      "id": "su_0016",
+      "seriesId": "B",
+      "originalDate": "2026-10-24",
+      "volunteerId": "V04",
+      "status": "confirmed",
+      "createdAt": "2026-09-17T00:22:38.000Z"
+    },
+    {
+      "id": "su_0017",
+      "seriesId": "A",
+      "originalDate": "2026-12-08",
+      "volunteerId": "V90",
+      "status": "confirmed",
+      "createdAt": "2026-09-18T00:00:14.000Z"
+    },
+    {
+      "id": "su_0018",
+      "seriesId": "B",
+      "originalDate": "2026-12-12",
+      "volunteerId": "V115",
+      "status": "confirmed",
+      "createdAt": "2026-09-18T01:07:34.000Z"
+    },
+    {
+      "id": "su_0019",
+      "seriesId": "A",
+      "originalDate": "2026-12-15",
+      "volunteerId": "V41",
+      "status": "confirmed",
+      "createdAt": "2026-09-18T05:18:47.000Z"
+    },
+    {
+      "id": "su_0020",
+      "seriesId": "B",
+      "originalDate": "2026-12-12",
+      "volunteerId": "V124",
+      "status": "confirmed",
+      "createdAt": "2026-09-18T16:07:55.000Z"
+    },
+    {
+      "id": "su_0021",
+      "seriesId": "C",
+      "originalDate": "2026-12-10",
+      "volunteerId": "V86",
+      "status": "confirmed",
+      "createdAt": "2026-09-18T16:11:43.000Z"
+    },
+    {
+      "id": "su_0022",
+      "seriesId": "A",
+      "originalDate": "2026-10-20",
+      "volunteerId": "V65",
+      "status": "confirmed",
+      "createdAt": "2026-09-19T00:20:38.000Z"
+    },
+    {
+      "id": "su_0023",
+      "seriesId": "E",
+      "originalDate": "2026-11-14",
+      "volunteerId": "V44",
+      "status": "confirmed",
+      "createdAt": "2026-09-19T12:25:31.000Z"
+    },
+    {
+      "id": "su_0024",
+      "seriesId": "C",
+      "originalDate": "2026-12-03",
+      "volunteerId": "V35",
+      "status": "confirmed",
+      "createdAt": "2026-09-19T14:21:32.000Z"
+    },
+    {
+      "id": "su_0025",
+      "seriesId": "C",
+      "originalDate": "2026-11-05",
+      "volunteerId": "V19",
+      "status": "confirmed",
+      "createdAt": "2026-09-19T23:52:23.000Z"
+    },
+    {
+      "id": "su_0026",
+      "seriesId": "C",
+      "originalDate": "2026-12-10",
+      "volunteerId": "V28",
+      "status": "confirmed",
+      "createdAt": "2026-09-20T08:28:41.000Z"
+    },
+    {
+      "id": "su_0027",
+      "seriesId": "C",
+      "originalDate": "2026-12-17",
+      "volunteerId": "V40",
+      "status": "confirmed",
+      "createdAt": "2026-09-20T10:05:58.000Z"
+    },
+    {
+      "id": "su_0028",
+      "seriesId": "B",
+      "originalDate": "2026-12-12",
+      "volunteerId": "V52",
+      "status": "confirmed",
+      "createdAt": "2026-09-20T12:35:29.000Z"
+    },
+    {
+      "id": "su_0029",
+      "seriesId": "A",
+      "originalDate": "2026-11-17",
+      "volunteerId": "V63",
+      "status": "confirmed",
+      "createdAt": "2026-09-20T17:28:21.000Z"
+    },
+    {
+      "id": "su_0030",
+      "seriesId": "A",
+      "originalDate": "2026-12-15",
+      "volunteerId": "V136",
+      "status": "confirmed",
+      "createdAt": "2026-09-20T19:06:38.000Z"
+    },
+    {
+      "id": "su_0031",
+      "seriesId": "C",
+      "originalDate": "2026-11-19",
+      "volunteerId": "V95",
+      "status": "confirmed",
+      "createdAt": "2026-09-20T23:13:53.000Z"
+    },
+    {
+      "id": "su_0032",
+      "seriesId": "B",
+      "originalDate": "2026-11-21",
+      "volunteerId": "V28",
+      "status": "confirmed",
+      "createdAt": "2026-09-21T01:55:58.000Z"
+    },
+    {
+      "id": "su_0033",
+      "seriesId": "C",
+      "originalDate": "2026-11-12",
+      "volunteerId": "V88",
+      "status": "confirmed",
+      "createdAt": "2026-09-21T04:43:01.000Z"
+    },
+    {
+      "id": "su_0034",
+      "seriesId": "A",
+      "originalDate": "2026-12-22",
+      "volunteerId": "V104",
+      "status": "confirmed",
+      "createdAt": "2026-09-22T03:29:58.000Z"
+    },
+    {
+      "id": "su_0035",
+      "seriesId": "A",
+      "originalDate": "2026-10-27",
+      "volunteerId": "V02",
+      "status": "confirmed",
+      "createdAt": "2026-09-22T03:33:04.000Z"
+    },
+    {
+      "id": "su_0036",
+      "seriesId": "C",
+      "originalDate": "2026-12-10",
+      "volunteerId": "V106",
+      "status": "confirmed",
+      "createdAt": "2026-09-22T07:01:39.000Z"
+    },
+    {
+      "id": "su_0037",
+      "seriesId": "B",
+      "originalDate": "2026-11-14",
+      "volunteerId": "V44",
+      "status": "confirmed",
+      "createdAt": "2026-09-22T07:58:30.000Z"
+    },
+    {
+      "id": "su_0038",
+      "seriesId": "A",
+      "originalDate": "2026-12-15",
+      "volunteerId": "V96",
+      "status": "confirmed",
+      "createdAt": "2026-09-22T08:00:31.000Z"
+    },
+    {
+      "id": "su_0039",
+      "seriesId": "B",
+      "originalDate": "2026-10-24",
+      "volunteerId": "V07",
+      "status": "confirmed",
+      "createdAt": "2026-09-22T20:26:28.000Z"
+    },
+    {
+      "id": "su_0040",
+      "seriesId": "B",
+      "originalDate": "2026-10-24",
+      "volunteerId": "V10",
+      "status": "confirmed",
+      "createdAt": "2026-09-22T20:37:34.000Z"
+    },
+    {
+      "id": "su_0041",
+      "seriesId": "B",
+      "originalDate": "2026-10-24",
+      "volunteerId": "V11",
+      "status": "confirmed",
+      "createdAt": "2026-09-23T01:42:58.000Z"
+    },
+    {
+      "id": "su_0042",
+      "seriesId": "D",
+      "originalDate": "2026-12-19",
+      "volunteerId": "V86",
+      "status": "confirmed",
+      "createdAt": "2026-09-23T07:24:30.000Z"
+    },
+    {
+      "id": "su_0043",
+      "seriesId": "C",
+      "originalDate": "2026-11-12",
+      "volunteerId": "V31",
+      "status": "confirmed",
+      "createdAt": "2026-09-23T10:18:50.000Z"
+    },
+    {
+      "id": "su_0044",
+      "seriesId": "A",
+      "originalDate": "2026-12-15",
+      "volunteerId": "V20",
+      "status": "confirmed",
+      "createdAt": "2026-09-23T12:32:49.000Z"
+    },
+    {
+      "id": "su_0045",
+      "seriesId": "A",
+      "originalDate": "2026-12-29",
+      "volunteerId": "V16",
+      "status": "confirmed",
+      "createdAt": "2026-09-23T15:09:05.000Z"
+    },
+    {
+      "id": "su_0046",
+      "seriesId": "A",
+      "originalDate": "2026-12-15",
+      "volunteerId": "V44",
+      "status": "confirmed",
+      "createdAt": "2026-09-24T07:09:04.000Z"
+    },
+    {
+      "id": "su_0047",
+      "seriesId": "A",
+      "originalDate": "2026-11-10",
+      "volunteerId": "V140",
+      "status": "confirmed",
+      "createdAt": "2026-09-24T19:09:56.000Z"
+    },
+    {
+      "id": "su_0048",
+      "seriesId": "B",
+      "originalDate": "2026-12-05",
+      "volunteerId": "V107",
+      "status": "confirmed",
+      "createdAt": "2026-09-25T04:45:51.000Z"
+    },
+    {
+      "id": "su_0049",
+      "seriesId": "A",
+      "originalDate": "2026-11-17",
+      "volunteerId": "V103",
+      "status": "confirmed",
+      "createdAt": "2026-09-25T08:10:42.000Z"
+    },
+    {
+      "id": "su_0050",
+      "seriesId": "C",
+      "originalDate": "2026-12-03",
+      "volunteerId": "V22",
+      "status": "confirmed",
+      "createdAt": "2026-09-25T17:48:35.000Z"
+    },
+    {
+      "id": "su_0051",
+      "seriesId": "A",
+      "originalDate": "2026-12-15",
+      "volunteerId": "V120",
+      "status": "confirmed",
+      "createdAt": "2026-09-26T00:40:23.000Z"
+    },
+    {
+      "id": "su_0052",
+      "seriesId": "B",
+      "originalDate": "2026-11-21",
+      "volunteerId": "V48",
+      "status": "confirmed",
+      "createdAt": "2026-09-26T02:08:04.000Z"
+    },
+    {
+      "id": "su_0053",
+      "seriesId": "A",
+      "originalDate": "2026-11-10",
+      "volunteerId": "V131",
+      "status": "confirmed",
+      "createdAt": "2026-09-26T03:32:52.000Z"
+    },
+    {
+      "id": "su_0054",
+      "seriesId": "A",
+      "originalDate": "2026-12-08",
+      "volunteerId": "V87",
+      "status": "confirmed",
+      "createdAt": "2026-09-26T14:03:49.000Z"
+    },
+    {
+      "id": "su_0055",
+      "seriesId": "B",
+      "originalDate": "2026-12-12",
+      "volunteerId": "V132",
+      "status": "confirmed",
+      "createdAt": "2026-09-26T17:08:11.000Z"
+    },
+    {
+      "id": "su_0056",
+      "seriesId": "C",
+      "originalDate": "2026-11-19",
+      "volunteerId": "V32",
+      "status": "confirmed",
+      "createdAt": "2026-09-26T21:33:29.000Z"
+    },
+    {
+      "id": "su_0057",
+      "seriesId": "B",
+      "originalDate": "2026-11-21",
+      "volunteerId": "V50",
+      "status": "confirmed",
+      "createdAt": "2026-09-27T00:37:09.000Z"
+    },
+    {
+      "id": "su_0058",
+      "seriesId": "A",
+      "originalDate": "2026-12-15",
+      "volunteerId": "V49",
+      "status": "confirmed",
+      "createdAt": "2026-09-27T18:10:35.000Z"
+    },
+    {
+      "id": "su_0059",
+      "seriesId": "A",
+      "originalDate": "2026-10-20",
+      "volunteerId": "V53",
+      "status": "confirmed",
+      "createdAt": "2026-09-28T08:12:12.000Z"
+    },
+    {
+      "id": "su_0060",
+      "seriesId": "B",
+      "originalDate": "2026-10-24",
+      "volunteerId": "V02",
+      "status": "waitlisted",
+      "createdAt": "2026-09-28T08:33:39.000Z"
+    },
+    {
+      "id": "su_0061",
+      "seriesId": "B",
+      "originalDate": "2026-11-21",
+      "volunteerId": "V96",
+      "status": "confirmed",
+      "createdAt": "2026-09-28T08:43:49.000Z"
+    },
+    {
+      "id": "su_0062",
+      "seriesId": "A",
+      "originalDate": "2026-12-29",
+      "volunteerId": "V80",
+      "status": "confirmed",
+      "createdAt": "2026-09-28T13:55:56.000Z"
+    },
+    {
+      "id": "su_0063",
+      "seriesId": "D",
+      "originalDate": "2026-12-19",
+      "volunteerId": "V72",
+      "status": "confirmed",
+      "createdAt": "2026-09-28T18:59:23.000Z"
+    },
+    {
+      "id": "su_0064",
+      "seriesId": "B",
+      "originalDate": "2026-11-21",
+      "volunteerId": "V57",
+      "status": "waitlisted",
+      "createdAt": "2026-09-29T03:20:28.000Z"
+    },
+    {
+      "id": "su_0065",
+      "seriesId": "B",
+      "originalDate": "2026-12-19",
+      "volunteerId": "V07",
+      "status": "confirmed",
+      "createdAt": "2026-09-29T10:09:32.000Z"
+    },
+    {
+      "id": "su_0066",
+      "seriesId": "A",
+      "originalDate": "2026-11-10",
+      "volunteerId": "V30",
+      "status": "confirmed",
+      "createdAt": "2026-09-29T14:00:20.000Z"
+    },
+    {
+      "id": "su_0067",
+      "seriesId": "B",
+      "originalDate": "2026-11-07",
+      "volunteerId": "V125",
+      "status": "confirmed",
+      "createdAt": "2026-09-29T21:59:55.000Z"
+    },
+    {
+      "id": "su_0068",
+      "seriesId": "B",
+      "originalDate": "2026-12-12",
+      "volunteerId": "V43",
+      "status": "waitlisted",
+      "createdAt": "2026-09-30T01:50:43.000Z"
+    },
+    {
+      "id": "su_0069",
+      "seriesId": "D",
+      "originalDate": "2026-12-19",
+      "volunteerId": "V134",
+      "status": "confirmed",
+      "createdAt": "2026-09-30T11:08:51.000Z"
+    },
+    {
+      "id": "su_0070",
+      "seriesId": "A",
+      "originalDate": "2026-12-08",
+      "volunteerId": "V110",
+      "status": "confirmed",
+      "createdAt": "2026-09-30T14:34:31.000Z"
+    },
+    {
+      "id": "su_0071",
+      "seriesId": "C",
+      "originalDate": "2026-10-29",
+      "volunteerId": "V47",
+      "status": "confirmed",
+      "createdAt": "2026-10-01T06:28:31.000Z"
+    },
+    {
+      "id": "su_0072",
+      "seriesId": "C",
+      "originalDate": "2026-10-29",
+      "volunteerId": "V13",
+      "status": "confirmed",
+      "createdAt": "2026-10-01T07:58:33.000Z"
+    },
+    {
+      "id": "su_0073",
+      "seriesId": "C",
+      "originalDate": "2026-10-29",
+      "volunteerId": "V42",
+      "status": "confirmed",
+      "createdAt": "2026-10-02T04:45:32.000Z"
+    },
+    {
+      "id": "su_0074",
+      "seriesId": "B",
+      "originalDate": "2026-12-12",
+      "volunteerId": "V122",
+      "status": "waitlisted",
+      "createdAt": "2026-10-02T06:26:32.000Z"
+    },
+    {
+      "id": "su_0075",
+      "seriesId": "D",
+      "originalDate": "2026-12-19",
+      "volunteerId": "V62",
+      "status": "confirmed",
+      "createdAt": "2026-10-02T07:32:13.000Z"
+    },
+    {
+      "id": "su_0076",
+      "seriesId": "A",
+      "originalDate": "2026-12-15",
+      "volunteerId": "V46",
+      "status": "confirmed",
+      "createdAt": "2026-10-02T13:49:22.000Z"
+    },
+    {
+      "id": "su_0077",
+      "seriesId": "C",
+      "originalDate": "2026-10-29",
+      "volunteerId": "V102",
+      "status": "confirmed",
+      "createdAt": "2026-10-02T20:26:06.000Z"
+    },
+    {
+      "id": "su_0078",
+      "seriesId": "D",
+      "originalDate": "2026-12-19",
+      "volunteerId": "V110",
+      "status": "confirmed",
+      "createdAt": "2026-10-02T21:27:30.000Z"
+    },
+    {
+      "id": "su_0079",
+      "seriesId": "C",
+      "originalDate": "2026-10-22",
+      "volunteerId": "V37",
+      "status": "confirmed",
+      "createdAt": "2026-10-02T22:44:47.000Z"
+    },
+    {
+      "id": "su_0080",
+      "seriesId": "C",
+      "originalDate": "2026-10-22",
+      "volunteerId": "V72",
+      "status": "confirmed",
+      "createdAt": "2026-10-03T01:58:46.000Z"
+    },
+    {
+      "id": "su_0081",
+      "seriesId": "A",
+      "originalDate": "2026-11-10",
+      "volunteerId": "V63",
+      "status": "confirmed",
+      "createdAt": "2026-10-03T04:33:04.000Z"
+    },
+    {
+      "id": "su_0082",
+      "seriesId": "B",
+      "originalDate": "2026-11-07",
+      "volunteerId": "V32",
+      "status": "confirmed",
+      "createdAt": "2026-10-04T15:48:54.000Z"
+    },
+    {
+      "id": "su_0083",
+      "seriesId": "A",
+      "originalDate": "2026-12-01",
+      "volunteerId": "V01",
+      "status": "confirmed",
+      "createdAt": "2026-10-04T22:14:24.000Z"
+    },
+    {
+      "id": "su_0084",
+      "seriesId": "B",
+      "originalDate": "2026-12-05",
+      "volunteerId": "V46",
+      "status": "confirmed",
+      "createdAt": "2026-10-05T03:13:02.000Z"
+    },
+    {
+      "id": "su_0085",
+      "seriesId": "C",
+      "originalDate": "2026-11-12",
+      "volunteerId": "V79",
+      "status": "confirmed",
+      "createdAt": "2026-10-05T04:21:28.000Z"
+    },
+    {
+      "id": "su_0086",
+      "seriesId": "D",
+      "originalDate": "2026-12-19",
+      "volunteerId": "V60",
+      "status": "confirmed",
+      "createdAt": "2026-10-05T04:43:45.000Z"
+    },
+    {
+      "id": "su_0087",
+      "seriesId": "A",
+      "originalDate": "2026-12-08",
+      "volunteerId": "V97",
+      "status": "confirmed",
+      "createdAt": "2026-10-05T08:57:58.000Z"
+    },
+    {
+      "id": "su_0088",
+      "seriesId": "A",
+      "originalDate": "2026-12-01",
+      "volunteerId": "V04",
+      "status": "confirmed",
+      "createdAt": "2026-10-05T10:36:14.000Z"
+    },
+    {
+      "id": "su_0089",
+      "seriesId": "A",
+      "originalDate": "2026-12-08",
+      "volunteerId": "V136",
+      "status": "confirmed",
+      "createdAt": "2026-10-05T16:40:18.000Z"
+    },
+    {
+      "id": "su_0090",
+      "seriesId": "A",
+      "originalDate": "2026-11-03",
+      "volunteerId": "V117",
+      "status": "confirmed",
+      "createdAt": "2026-10-05T18:23:39.000Z"
+    },
+    {
+      "id": "su_0091",
+      "seriesId": "A",
+      "originalDate": "2026-12-15",
+      "volunteerId": "V18",
+      "status": "waitlisted",
+      "createdAt": "2026-10-06T00:50:01.000Z"
+    },
+    {
+      "id": "su_0092",
+      "seriesId": "A",
+      "originalDate": "2026-11-10",
+      "volunteerId": "V49",
+      "status": "confirmed",
+      "createdAt": "2026-10-06T01:16:31.000Z"
+    },
+    {
+      "id": "su_0093",
+      "seriesId": "D",
+      "originalDate": "2026-12-19",
+      "volunteerId": "V96",
+      "status": "confirmed",
+      "createdAt": "2026-10-06T10:14:03.000Z"
+    },
+    {
+      "id": "su_0094",
+      "seriesId": "A",
+      "originalDate": "2026-12-01",
+      "volunteerId": "V07",
+      "status": "confirmed",
+      "createdAt": "2026-10-06T10:25:41.000Z"
+    },
+    {
+      "id": "su_0095",
+      "seriesId": "A",
+      "originalDate": "2026-11-17",
+      "volunteerId": "V81",
+      "status": "confirmed",
+      "createdAt": "2026-10-07T13:29:13.000Z"
+    },
+    {
+      "id": "su_0096",
+      "seriesId": "C",
+      "originalDate": "2026-10-22",
+      "volunteerId": "V78",
+      "status": "confirmed",
+      "createdAt": "2026-10-07T14:16:00.000Z"
+    },
+    {
+      "id": "su_0097",
+      "seriesId": "A",
+      "originalDate": "2026-11-24",
+      "volunteerId": "V94",
+      "status": "confirmed",
+      "createdAt": "2026-10-07T18:05:12.000Z"
+    },
+    {
+      "id": "su_0098",
+      "seriesId": "A",
+      "originalDate": "2026-12-08",
+      "volunteerId": "V95",
+      "status": "waitlisted",
+      "createdAt": "2026-10-08T05:00:21.000Z"
+    },
+    {
+      "id": "su_0099",
+      "seriesId": "C",
+      "originalDate": "2026-12-17",
+      "volunteerId": "V99",
+      "status": "confirmed",
+      "createdAt": "2026-10-08T06:39:20.000Z"
+    },
+    {
+      "id": "su_0100",
+      "seriesId": "A",
+      "originalDate": "2026-10-27",
+      "volunteerId": "V03",
+      "status": "confirmed",
+      "createdAt": "2026-10-08T14:38:45.000Z"
+    },
+    {
+      "id": "su_0101",
+      "seriesId": "A",
+      "originalDate": "2026-10-27",
+      "volunteerId": "V04",
+      "status": "confirmed",
+      "createdAt": "2026-10-08T15:46:03.000Z"
+    },
+    {
+      "id": "su_0102",
+      "seriesId": "B",
+      "originalDate": "2026-12-12",
+      "volunteerId": "V98",
+      "status": "waitlisted",
+      "createdAt": "2026-10-08T18:47:51.000Z"
+    },
+    {
+      "id": "su_0103",
+      "seriesId": "A",
+      "originalDate": "2026-12-22",
+      "volunteerId": "V17",
+      "status": "confirmed",
+      "createdAt": "2026-10-08T19:16:29.000Z"
+    },
+    {
+      "id": "su_0104",
+      "seriesId": "C",
+      "originalDate": "2026-12-10",
+      "volunteerId": "V47",
+      "status": "confirmed",
+      "createdAt": "2026-10-08T19:18:12.000Z"
+    },
+    {
+      "id": "su_0105",
+      "seriesId": "B",
+      "originalDate": "2026-10-24",
+      "volunteerId": "V05",
+      "status": "waitlisted",
+      "createdAt": "2026-10-08T20:24:05.000Z"
+    },
+    {
+      "id": "su_0106",
+      "seriesId": "C",
+      "originalDate": "2026-11-05",
+      "volunteerId": "V84",
+      "status": "confirmed",
+      "createdAt": "2026-10-09T02:06:37.000Z"
+    },
+    {
+      "id": "su_0107",
+      "seriesId": "B",
+      "originalDate": "2026-11-07",
+      "volunteerId": "V97",
+      "status": "confirmed",
+      "createdAt": "2026-10-09T07:45:29.000Z"
+    },
+    {
+      "id": "su_0108",
+      "seriesId": "B",
+      "originalDate": "2026-11-14",
+      "volunteerId": "V34",
+      "status": "confirmed",
+      "createdAt": "2026-10-09T10:06:35.000Z"
+    },
+    {
+      "id": "su_0109",
+      "seriesId": "D",
+      "originalDate": "2026-12-19",
+      "volunteerId": "V136",
+      "status": "confirmed",
+      "createdAt": "2026-10-09T19:49:30.000Z"
+    },
+    {
+      "id": "su_0110",
+      "seriesId": "A",
+      "originalDate": "2026-12-22",
+      "volunteerId": "V99",
+      "status": "confirmed",
+      "createdAt": "2026-10-10T21:14:30.000Z"
+    },
+    {
+      "id": "su_0111",
+      "seriesId": "A",
+      "originalDate": "2026-11-10",
+      "volunteerId": "V136",
+      "status": "confirmed",
+      "createdAt": "2026-10-11T07:09:27.000Z"
+    },
+    {
+      "id": "su_0112",
+      "seriesId": "A",
+      "originalDate": "2026-10-27",
+      "volunteerId": "V05",
+      "status": "confirmed",
+      "createdAt": "2026-10-11T11:41:30.000Z"
+    },
+    {
+      "id": "su_0113",
+      "seriesId": "C",
+      "originalDate": "2026-12-10",
+      "volunteerId": "V96",
+      "status": "confirmed",
+      "createdAt": "2026-10-11T14:42:44.000Z"
+    },
+    {
+      "id": "su_0114",
+      "seriesId": "A",
+      "originalDate": "2026-12-29",
+      "volunteerId": "V18",
+      "status": "confirmed",
+      "createdAt": "2026-10-11T15:01:27.000Z"
+    },
+    {
+      "id": "su_0115",
+      "seriesId": "B",
+      "originalDate": "2026-11-21",
+      "volunteerId": "V13",
+      "status": "waitlisted",
+      "createdAt": "2026-10-12T02:20:00.000Z"
+    },
+    {
+      "id": "su_0116",
+      "seriesId": "C",
+      "originalDate": "2026-12-10",
+      "volunteerId": "V102",
+      "status": "confirmed",
+      "createdAt": "2026-10-12T04:28:04.000Z"
+    },
+    {
+      "id": "su_0117",
+      "seriesId": "D",
+      "originalDate": "2026-12-19",
+      "volunteerId": "V125",
+      "status": "confirmed",
+      "createdAt": "2026-10-12T10:21:12.000Z"
+    },
+    {
+      "id": "su_0118",
+      "seriesId": "C",
+      "originalDate": "2026-11-12",
+      "volunteerId": "V81",
+      "status": "confirmed",
+      "createdAt": "2026-10-12T10:59:05.000Z"
+    },
+    {
+      "id": "su_0119",
+      "seriesId": "A",
+      "originalDate": "2026-11-17",
+      "volunteerId": "V134",
+      "status": "confirmed",
+      "createdAt": "2026-10-12T13:44:57.000Z"
+    },
+    {
+      "id": "su_0120",
+      "seriesId": "A",
+      "originalDate": "2026-10-27",
+      "volunteerId": "V06",
+      "status": "confirmed",
+      "createdAt": "2026-10-13T08:26:21.000Z"
+    },
+    {
+      "id": "su_0121",
+      "seriesId": "A",
+      "originalDate": "2026-12-15",
+      "volunteerId": "V133",
+      "status": "waitlisted",
+      "createdAt": "2026-10-13T12:38:44.000Z"
+    },
+    {
+      "id": "su_0122",
+      "seriesId": "C",
+      "originalDate": "2026-12-03",
+      "volunteerId": "V103",
+      "status": "confirmed",
+      "createdAt": "2026-10-13T16:48:23.000Z"
+    },
+    {
+      "id": "su_0123",
+      "seriesId": "C",
+      "originalDate": "2026-10-29",
+      "volunteerId": "V22",
+      "status": "waitlisted",
+      "createdAt": "2026-10-13T21:30:25.000Z"
+    },
+    {
+      "id": "su_0124",
+      "seriesId": "B",
+      "originalDate": "2026-10-31",
+      "volunteerId": "V29",
+      "status": "confirmed",
+      "createdAt": "2026-10-14T00:30:37.000Z"
+    },
+    {
+      "id": "su_0125",
+      "seriesId": "C",
+      "originalDate": "2026-12-10",
+      "volunteerId": "V13",
+      "status": "waitlisted",
+      "createdAt": "2026-10-14T01:39:02.000Z"
+    },
+    {
+      "id": "su_0126",
+      "seriesId": "A",
+      "originalDate": "2026-12-08",
+      "volunteerId": "V30",
+      "status": "waitlisted",
+      "createdAt": "2026-10-14T09:52:43.000Z"
+    },
+    {
+      "id": "su_0127",
+      "seriesId": "C",
+      "originalDate": "2026-12-10",
+      "volunteerId": "V37",
+      "status": "waitlisted",
+      "createdAt": "2026-10-14T10:40:25.000Z"
+    },
+    {
+      "id": "su_0128",
+      "seriesId": "A",
+      "originalDate": "2026-12-01",
+      "volunteerId": "V08",
+      "status": "confirmed",
+      "createdAt": "2026-10-14T14:15:16.000Z"
+    },
+    {
+      "id": "su_0129",
+      "seriesId": "C",
+      "originalDate": "2026-10-22",
+      "volunteerId": "V80",
+      "status": "confirmed",
+      "createdAt": "2026-10-14T15:37:40.000Z"
+    },
+    {
+      "id": "su_0130",
+      "seriesId": "A",
+      "originalDate": "2026-11-03",
+      "volunteerId": "V81",
+      "status": "confirmed",
+      "createdAt": "2026-10-15T00:54:21.000Z"
+    },
+    {
+      "id": "su_0131",
+      "seriesId": "A",
+      "originalDate": "2026-11-03",
+      "volunteerId": "V38",
+      "status": "confirmed",
+      "createdAt": "2026-10-15T14:49:05.000Z"
+    },
+    {
+      "id": "su_0132",
+      "seriesId": "A",
+      "originalDate": "2026-11-10",
+      "volunteerId": "V20",
+      "status": "waitlisted",
+      "createdAt": "2026-10-15T17:05:08.000Z"
+    },
+    {
+      "id": "su_0133",
+      "seriesId": "A",
+      "originalDate": "2026-12-15",
+      "volunteerId": "V27",
+      "status": "waitlisted",
+      "createdAt": "2026-10-16T07:40:05.000Z"
+    },
+    {
+      "id": "su_0134",
+      "seriesId": "A",
+      "originalDate": "2026-10-20",
+      "volunteerId": "V106",
+      "status": "confirmed",
+      "createdAt": "2026-10-17T21:45:09.000Z"
+    },
+    {
+      "id": "su_0135",
+      "seriesId": "C",
+      "originalDate": "2026-11-12",
+      "volunteerId": "V49",
+      "status": "confirmed",
+      "createdAt": "2026-10-18T10:59:35.000Z"
+    },
+    {
+      "id": "su_0136",
+      "seriesId": "E",
+      "originalDate": "2026-11-14",
+      "volunteerId": "V116",
+      "status": "confirmed",
+      "createdAt": "2026-10-18T14:06:07.000Z"
+    },
+    {
+      "id": "su_0137",
+      "seriesId": "A",
+      "originalDate": "2026-12-22",
+      "volunteerId": "V103",
+      "status": "confirmed",
+      "createdAt": "2026-10-18T16:42:03.000Z"
+    },
+    {
+      "id": "su_0138",
+      "seriesId": "A",
+      "originalDate": "2026-10-20",
+      "volunteerId": "V119",
+      "status": "confirmed",
+      "createdAt": "2026-10-18T20:52:48.000Z"
+    },
+    {
+      "id": "su_0139",
+      "seriesId": "A",
+      "originalDate": "2026-11-17",
+      "volunteerId": "V117",
+      "status": "confirmed",
+      "createdAt": "2026-10-18T22:54:59.000Z"
+    },
+    {
+      "id": "su_0140",
+      "seriesId": "A",
+      "originalDate": "2026-11-17",
+      "volunteerId": "V48",
+      "status": "confirmed",
+      "createdAt": "2026-10-19T11:00:18.000Z"
+    },
+    {
+      "id": "su_0141",
+      "seriesId": "A",
+      "originalDate": "2026-12-01",
+      "volunteerId": "V12",
+      "status": "confirmed",
+      "createdAt": "2026-10-19T14:28:07.000Z"
+    },
+    {
+      "id": "su_0142",
+      "seriesId": "A",
+      "originalDate": "2026-12-29",
+      "volunteerId": "V13",
+      "status": "confirmed",
+      "createdAt": "2026-10-19T18:17:58.000Z"
+    },
+    {
+      "id": "su_0143",
+      "seriesId": "C",
+      "originalDate": "2026-11-05",
+      "volunteerId": "V131",
+      "status": "confirmed",
+      "createdAt": "2026-10-19T20:17:05.000Z"
+    },
+    {
+      "id": "su_0144",
+      "seriesId": "D",
+      "originalDate": "2026-12-19",
+      "volunteerId": "V41",
+      "status": "confirmed",
+      "createdAt": "2026-10-20T05:05:24.000Z"
+    },
+    {
+      "id": "su_0145",
+      "seriesId": "A",
+      "originalDate": "2026-10-27",
+      "volunteerId": "V08",
+      "status": "confirmed",
+      "createdAt": "2026-10-20T08:12:38.000Z"
+    },
+    {
+      "id": "su_0146",
+      "seriesId": "D",
+      "originalDate": "2026-12-19",
+      "volunteerId": "V101",
+      "status": "confirmed",
+      "createdAt": "2026-10-20T09:53:07.000Z"
+    },
+    {
+      "id": "su_0147",
+      "seriesId": "D",
+      "originalDate": "2026-12-19",
+      "volunteerId": "V113",
+      "status": "confirmed",
+      "createdAt": "2026-10-20T11:16:29.000Z"
+    }
+  ]
+}
