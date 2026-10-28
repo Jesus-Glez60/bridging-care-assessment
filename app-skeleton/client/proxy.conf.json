@@ -1,4 +1,5 @@
 {
   "/api": { "target": "http://localhost:3000", "secure": false },
-  "/health": { "target": "http://localhost:3000", "secure": false }
+  "/health": { "target": "http://localhost:3000", "secure": false },
+  "/mockups": { "target": "http://localhost:3000", "secure": false }
 }

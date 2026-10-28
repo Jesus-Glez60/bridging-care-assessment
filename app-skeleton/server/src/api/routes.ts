@@ -7,7 +7,7 @@ import { col, tx } from "../db";
 import { cancelOccurrence, createSeries, moveOccurrence } from "../domain/occurrences";
 import { acceptOffer, acknowledgeMove, cancelSignup, declineOffer, DomainError, keepAfterCalendarRemoval, signUp, type Actor } from "../domain/signups";
 import { PRIORITY, refreshLinks } from "../sync/links";
-import { dualTime, formatWindow, zoneLabel } from "../time";
+import { dualTime, formatInstant, formatWindow, zoneLabel } from "../time";
 import { ACTIVE_STATUSES, type Occurrence, type Volunteer } from "../types";
 
 type Req = Request & { actor?: Actor & { name: string; tz: string } };
@@ -241,6 +241,7 @@ export function apiRouter(deps: ApiDeps) {
             cancelReason: s.cancelReason,
             waitlistPosition: s.status === "waitlisted" ? ++waitPos : null,
             offerExpiresAt: s.offerExpiresAt,
+            offerExpiresLabel: s.offerExpiresAt ? formatInstant(s.offerExpiresAt, occ.tz) : null,
             uncertainSince: s.uncertainSince,
             chase: s.status === "uncertain" && !!s.uncertainSince && n.getTime() - s.uncertainSince.getTime() > CHASE_AFTER_MS,
             moveAcknowledged: occ.movedFrom ? s.ackVersion >= occ.version : null,
